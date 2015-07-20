@@ -10,33 +10,44 @@
  Supply a method public boolean comesBefore(Address other) that tests whether this address comes 
  before another when the addresses are compared by postal code.*/
 
-public class address {
-	private int houseNumber;
-	private String street;
-	private int apartmentNumber;
-	private String city;
-	private int postalCode;
-	
-	public address(int houseNumber, String street, int apartmentNumber, String city, int postalCode){
-		this.houseNumber=houseNumber;
-		this.street=street;
-		this.apartmentNumber=apartmentNumber;
-		this.city=city;
-		this.postalCode=postalCode;
-	}
-	
-	public address(int houseNumber, String street, String city, int postalCode){
-		this.houseNumber=houseNumber;
-		this.street=street;
-		this.city=city;
-		this.postalCode=postalCode;
-	}
-	
-	public void print(){
-		System.out.println(String.format("%s, %s\n%s,%s,%d",street,(apartmentNumber!=0)?apartmentNumber : houseNumber, city, postalCode));
-	}
-	
-	public boolean comesBefore(address other){
-		return this.postalCode>other.postalCode;
-	}
+public class Address {
+    private String houseNumber;
+    private String street;
+    private String state;
+    private String city;
+    private int apartmentNumber;
+    private int postalCode;
+    
+    public Address(String houseNumber, String street, int apartmentNumber, String state, String city, int postalCode)
+    {
+        this.houseNumber=houseNumber;
+        this.street=street;
+        this.state=state;
+        this.city=city;
+        this.apartmentNumber=apartmentNumber;
+        this.postalCode=postalCode;
+    }
+    
+    public Address(String houseNumber, String street, String state, String city, int postalCode)
+    {
+        this.houseNumber=houseNumber;
+        this.street=street;
+        this.city=city;
+        this.state=state;
+        this.postalCode=postalCode;
+    }
+    
+    void print()
+    {
+        System.out.println("Street: " + houseNumber +" "+ street);
+        System.out.println("Apartment Number: "+ apartmentNumber);
+        System.out.println("City: "        + city + ","
+                           + " State: "       + state +","
+                           + " Postal Code: " + postalCode);
+    } 
+    
+    public boolean comesBefore(Address other)
+    {
+        return this.postalCode>other.postalCode;
+    }
 }
