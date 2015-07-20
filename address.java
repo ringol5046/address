@@ -10,7 +10,7 @@
  Supply a method public boolean comesBefore(Address other) that tests whether this address comes 
  before another when the addresses are compared by postal code.*/
 
-public class address {
+public class Address {
 	private int houseNumber;
 	private String street;
 	private int apartmentNumber;
