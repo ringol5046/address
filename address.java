@@ -19,6 +19,7 @@ public class Address {
     private String postalCode;
     
     public Address(String houseNumber, String street, int apartmentNumber, String state, String city, String postalCode){
+        
         this.houseNumber=houseNumber;
         this.street=street;
         this.state=state;
@@ -33,7 +34,7 @@ public class Address {
         this.city = city;
         this.state = state;
         this.postalCode = postalCode;
-    }
+
     
     public void print() {
         StringBuilder s = new StringBuilder();
