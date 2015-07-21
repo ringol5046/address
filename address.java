@@ -16,10 +16,9 @@ public class Address {
     private String state;
     private String city;
     private int apartmentNumber;
-    private int postalCode;
+    private String postalCode;
     
-    public Address(String houseNumber, String street, int apartmentNumber, String state, String city, int postalCode)
-    {
+    public Address(String houseNumber, String street, int apartmentNumber, String state, String city, String postalCode){
         this.houseNumber=houseNumber;
         this.street=street;
         this.state=state;
@@ -28,26 +27,26 @@ public class Address {
         this.postalCode=postalCode;
     }
     
-    public Address(String houseNumber, String street, String state, String city, int postalCode)
-    {
-        this.houseNumber=houseNumber;
-        this.street=street;
-        this.city=city;
-        this.state=state;
-        this.postalCode=postalCode;
+    public Address(String houseNumber, String street, String state, String city, String postalCode){
+        this.houseNumber = houseNumber;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.postalCode = postalCode;
     }
     
-    void print()
-    {
-        System.out.println("Street: " + houseNumber +" "+ street);
-        System.out.println("Apartment Number: "+ apartmentNumber);
-        System.out.println("City: "        + city + ","
-                           + " State: "       + state +","
-                           + " Postal Code: " + postalCode);
-    } 
+    public void print() {
+        StringBuilder s = new StringBuilder();
+        s.append("Street: " + houseNumber + " " + street)
+        .append("\nApartment Number: " + apartmentNumber)
+        .append("\nCity: " + city + ", State: " + state + ", Zip Code: "+ postalCode);
+        
+        System.out.println(s.toString());
+    }
     
-    public boolean comesBefore(Address other)
-    {
-        return this.postalCode>other.postalCode;
+    public boolean comesBefore(Address other){
+        int zipCode1 = Integer.parseInt(this.postalCode);
+        int zipCode2 = Integer.parseInt(other.postalCode);
+        return zipCode1>zipCode2;
     }
 }
