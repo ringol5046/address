@@ -49,5 +49,4 @@ public class Address {
 		int zipCode2 = Integer.parseInt(other.postalCode);
 		return zipCode1>zipCode2;
 	}
-
 }
