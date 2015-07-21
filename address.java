@@ -16,9 +16,9 @@ public class Address {
     private String state;
     private String city;
     private int apartmentNumber;
-    private int postalCode;
+    private String postalCode;
     
-    public Address(String houseNumber, String street, int apartmentNumber, String state, String city, int postalCode)
+    public Address(String houseNumber, String street, int apartmentNumber, String state, String city, String postalCode)
     {
         this.houseNumber=houseNumber;
         this.street=street;
@@ -28,7 +28,7 @@ public class Address {
         this.postalCode=postalCode;
     }
     
-    public Address(String houseNumber, String street, String state, String city, int postalCode)
+    public Address(String houseNumber, String street, String state, String city, String postalCode)
     {
         this.houseNumber=houseNumber;
         this.street=street;
