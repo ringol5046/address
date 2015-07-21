@@ -13,6 +13,7 @@ public class AddressTest {
         test.comesBefore(test2);
         
         assertEquals("Street: 130 Farmstead Lane\nApartment Number: 163\nCity: State College, State: PA, Zip Code: 16803",test.print());
+        assertEquals("Street: 130 Farmstead Lane\nApartment Number: 0\nCity: State College, State: PA, Zip Code: 16803",test2.print());
     }
     
 }
